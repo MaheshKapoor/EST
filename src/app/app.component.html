@@ -1,0 +1,42 @@
+
+<!--Header-->
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/link1'"> Link 1 </a>
+      <a mat-button [routerLink]="'/link2'"> Link 2 </a>
+      <a mat-button [routerLink]="'/link3'"> Link 3 </a>
+      <a mat-button [routerLink]="'/link4'"> Link 4 </a>
+      <a mat-button [routerLink]="'/link5'"> Link 5 </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!--left navigation-->
+<mat-sidenav-container>
+  <mat-sidenav #sidenav >
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="'/link1'"> Link 1 </a>
+      <a mat-list-item [routerLink]="'/link2'"> Link 2 </a>
+      <a mat-list-item [routerLink]="'/link3'"> Link 3 </a>
+      <a mat-list-item [routerLink]="'/link4'"> Link 4 </a>
+      <a mat-list-item [routerLink]="'/link5'"> Link 5 </a>
+      <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+      <app-font-controller></app-font-controller>
+      <!--<app-event-details-form></app-event-details-form>-->
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<app-footer></app-footer>
+
